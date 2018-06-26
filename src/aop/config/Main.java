@@ -9,7 +9,7 @@ public class Main {
                 new AnnotationConfigApplicationContext(SpringConfiguration.class);
 
         CustomerDAO customerDAO = context.getBean("customerDAO", CustomerDAO.class);
-        customerDAO.addCustomer();
+        customerDAO.setCustomer();
 
         context.close();
     }
