@@ -21,4 +21,9 @@ public class MyLogAspect {
     public void beforeSettingInDao() {
         System.out.println("Setting some value in aop.dao package!");
     }
+
+    @Before("beforeSetting()")
+    public void beforeSettingGeneral() {
+        System.out.println("Setting some value somewhere in app!");
+    }
 }
