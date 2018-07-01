@@ -9,21 +9,32 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyLogAspect {
 
+    private static final String ANSI_RESET = "\u001B[0m";
+    private static final String ANSI_GREEN = "\u001B[32m";
+
     @Pointcut("execution(* set*(..))")
-    public void beforeSetting() {
+    public void ifSetting() {
     }
 
     @Pointcut("within(aop.dao.*)")
-    public void beforeInDao() {
+    public void ifInDao() {
     }
 
-    @Before("beforeSetting() && beforeInDao()")
+    @Pointcut("this(aop.dao.MyMarker)")
+    public void ifMarker() {
+    }
+
+    @Pointcut("@target(org.springframework.stereotype.Component)")
+    public void ifComponent() {
+    }
+
+    @Before("ifSetting() &&ifInDao() && ifMarker()")
     public void beforeSettingInDao() {
-        System.out.println("Setting some value in aop.dao package!");
+        System.out.println(ANSI_GREEN + ">>>>>>Setting some value in aop.dao package!" + ANSI_RESET);
     }
 
-    @Before("beforeSetting()")
+    @Before("ifSetting() && ifComponent()")
     public void beforeSettingGeneral() {
-        System.out.println("Setting some value somewhere in app!");
+        System.out.println(ANSI_GREEN + ">>>>>>Setting some value somewhere in app!" + ANSI_RESET);
     }
 }

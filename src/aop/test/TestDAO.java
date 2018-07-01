@@ -6,6 +6,6 @@ import org.springframework.stereotype.Component;
 public class TestDAO {
 
     public void setSomething() {
-        System.out.println("Setting something in " + getClass());
+        System.out.println("Setting something in " + getClass() + "\n");
     }
 }
