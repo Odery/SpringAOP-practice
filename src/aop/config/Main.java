@@ -13,6 +13,10 @@ public class Main {
         TestDAO testDAO = context.getBean("testDAO", TestDAO.class);
 
         customerDAO.setCustomer();
+        customerDAO.setCustomer();
+        customerDAO.setCustomer();
+        customerDAO.setCustomer();
+
         testDAO.setSomething();
         context.close();
     }

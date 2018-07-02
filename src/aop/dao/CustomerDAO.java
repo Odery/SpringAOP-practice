@@ -3,7 +3,7 @@ package aop.dao;
 
 import org.springframework.stereotype.Component;
 
-@Component
+@Component("customerDAO")
 public class CustomerDAO implements MyMarker {
 
     public void setCustomer() {
