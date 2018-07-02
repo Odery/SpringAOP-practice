@@ -37,4 +37,14 @@ public class MyLogAspect {
     public void beforeSettingGeneral() {
         System.out.println(ANSI_GREEN + ">>>>>>Setting some value somewhere in app!" + ANSI_RESET);
     }
+
+    @Before("@within(aop.test.ClassRetAnnotation)")
+    public void within() {
+        System.out.println(ANSI_GREEN + ">>>>>>within" + ANSI_RESET);
+    }
+
+    @Before("@target(aop.test.RuntimeRetAnnotation)")
+    public void target() {
+        System.out.println(ANSI_GREEN + ">>>>>>target" + ANSI_RESET);
+    }
 }

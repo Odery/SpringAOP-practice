@@ -3,6 +3,7 @@ package aop.test;
 import org.springframework.stereotype.Component;
 
 @Component
+@ClassRetAnnotation
 public class TestDAO {
 
     public void setSomething() {
