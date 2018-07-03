@@ -14,7 +14,7 @@ public class Main {
 
         customerDAO.setCustomer("Steve", "Rogers");
         customerDAO.setCustomer("Roger", "Smith");
-        System.out.println(customerDAO.getList() + "\n");
+        System.out.println(customerDAO.getList());
 
         testDAO.test(true);
         try {

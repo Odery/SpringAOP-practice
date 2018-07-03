@@ -10,7 +10,7 @@ import java.util.List;
 public class CustomerDAO implements MyMarker {
 
     public void setCustomer(String name, String lastName) {
-        System.out.println(getClass() + " is setting " + name + " " + lastName + "\n");
+        System.out.println(getClass() + " is setting " + name + " " + lastName);
     }
 
     public List<String> getList() {

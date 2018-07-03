@@ -1,6 +1,7 @@
 package aop.aspect;
 
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
@@ -23,5 +24,10 @@ public class LoggingAspect {
     @AfterThrowing(pointcut = "aop.aspect.PointcutAspect.ifExcIsThrown()", throwing = "exc")
     public void afterExc(JoinPoint joinPoint, Throwable exc) {
         System.out.println(ANSI_GREEN + exc + "is being logged!" + ANSI_RESET);
+    }
+
+    @After("aop.aspect.PointcutAspect.ifComponent()")
+    public void afterFinally(JoinPoint joinPoint) {
+        System.out.println(ANSI_GREEN + ">>>>>>Finally after " + joinPoint.getSignature() + ANSI_RESET + "\n");
     }
 }
