@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @ClassRetAnnotation
 public class TestDAO {
 
-    public void setSomething() {
-        System.out.println("Setting something in " + getClass() + "\n");
+    public void test(boolean isTesting) {
+        System.out.println(isTesting ? "Testing..." : "Waiting for testing...");
     }
 }

@@ -1,5 +1,6 @@
 package aop.aspect;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
 import org.springframework.core.annotation.Order;
@@ -14,8 +15,8 @@ public class MyAspect {
     private static final String ANSI_BLUE = "\u001B[34m";
 
     @Before("aop.aspect.PoincutAspect.ifMarker()")
-    public void beforeSet() {
-        System.out.println(ANSI_BLUE + ">>>>>>Setting some value in aop.dao package!" + ANSI_RESET);
+    public void beforeSet(JoinPoint joinPoint) {
+        System.out.println(ANSI_BLUE + ">>>>>>Setting some value in " + joinPoint.getSignature() + ANSI_RESET);
     }
 
     @Before("aop.aspect.PoincutAspect.ifSetting() && aop.aspect.PoincutAspect.ifComponent()")

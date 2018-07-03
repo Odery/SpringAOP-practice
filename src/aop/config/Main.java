@@ -12,12 +12,10 @@ public class Main {
         CustomerDAO customerDAO = context.getBean("customerDAO", CustomerDAO.class);
         TestDAO testDAO = context.getBean("testDAO", TestDAO.class);
 
-        customerDAO.setCustomer();
-        customerDAO.setCustomer();
-        customerDAO.setCustomer();
-        customerDAO.setCustomer();
+        customerDAO.setCustomer("Steve", "Rogers");
+        customerDAO.setCustomer("Roger", "Smith");
 
-        testDAO.setSomething();
+        testDAO.test(true);
         context.close();
     }
 }
