@@ -14,8 +14,14 @@ public class Main {
 
         customerDAO.setCustomer("Steve", "Rogers");
         customerDAO.setCustomer("Roger", "Smith");
+        System.out.println(customerDAO.getList() + "\n");
 
         testDAO.test(true);
+        try {
+            testDAO.throwExc();
+        } catch (Exception exc) {
+            System.err.println(exc.getMessage() + "\n");
+        }
         context.close();
     }
 }

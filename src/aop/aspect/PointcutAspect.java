@@ -4,7 +4,7 @@ import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
-public class PoincutAspect {
+public class PointcutAspect {
     @Pointcut("execution(* set*(..))")
     public void ifSetting() {
     }
@@ -21,4 +21,11 @@ public class PoincutAspect {
     public void ifComponent() {
     }
 
+    @Pointcut("execution(java.util.List get*())")
+    public void getList() {
+    }
+
+    @Pointcut("execution(* *.*(..) throws Exception)")
+    public void ifExcIsThrown() {
+    }
 }

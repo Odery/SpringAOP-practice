@@ -14,12 +14,12 @@ public class MyAspect {
     private static final String ANSI_RESET = "\u001B[0m";
     private static final String ANSI_BLUE = "\u001B[34m";
 
-    @Before("aop.aspect.PoincutAspect.ifMarker()")
+    @Before("aop.aspect.PointcutAspect.ifMarker()")
     public void beforeSet(JoinPoint joinPoint) {
         System.out.println(ANSI_BLUE + ">>>>>>Setting some value in " + joinPoint.getSignature() + ANSI_RESET);
     }
 
-    @Before("aop.aspect.PoincutAspect.ifSetting() && aop.aspect.PoincutAspect.ifComponent()")
+    @Before("aop.aspect.PointcutAspect.ifSetting() && aop.aspect.PointcutAspect.ifComponent()")
     public void beforeSettingGeneral() {
         System.out.println(ANSI_BLUE + ">>>>>>Setting some value somewhere in app!" + ANSI_RESET);
     }
