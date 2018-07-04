@@ -22,4 +22,8 @@ public class CustomerDAO implements MyMarker {
 
         return arrayList;
     }
+
+    public String getName() {
+        return "Jumbo";
+    }
 }

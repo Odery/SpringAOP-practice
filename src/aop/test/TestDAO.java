@@ -2,12 +2,16 @@ package aop.test;
 
 import org.springframework.stereotype.Component;
 
+import java.util.logging.Logger;
+
 @Component
 @ClassRetAnnotation
 public class TestDAO {
 
+    private static Logger logger = Logger.getLogger(TestDAO.class.getName());
+
     public void test(boolean isTesting) {
-        System.out.println(isTesting ? "Testing..." : "Waiting for testing...");
+        logger.info(isTesting ? "Testing..." : "Waiting for testing...");
     }
 
     public void throwExc() throws Exception {
