@@ -23,7 +23,10 @@ public class CustomerDAO implements MyMarker {
         return arrayList;
     }
 
-    public String getName() {
+    public String getName(boolean throwExc) {
+        if (throwExc) {
+            throw new RuntimeException("Electricity is down!");
+        }
         return "Jumbo";
     }
 }

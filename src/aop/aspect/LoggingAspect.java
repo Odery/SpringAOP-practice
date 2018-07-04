@@ -35,7 +35,13 @@ public class LoggingAspect {
 
         long timeBefore = System.currentTimeMillis();
 
-        Object result = point.proceed();
+        Object result = null;
+
+        try {
+            result = point.proceed();
+        } catch (RuntimeException exc) {
+            logger.warning(exc.getMessage());
+        }
 
         logger.info(ANSI_GREEN + ">>>>>>Method " + point.getSignature().toShortString() + " took: "
                 + (timeBefore - System.currentTimeMillis()) + "ms " + ANSI_RESET);

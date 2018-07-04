@@ -29,7 +29,7 @@ public class Main {
 //            logger.info(exc.getMessage() + "\n");
 //        }
 
-        logger.info(ANSI_BLACk + customerDAO.getName() + ANSI_RESET);
+        logger.info(ANSI_BLACk + customerDAO.getName(true) + ANSI_RESET);
         context.close();
     }
 }
